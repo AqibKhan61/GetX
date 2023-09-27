@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
-import 'package:getx/screen4.dart';
 import 'package:flutter/material.dart';
+import 'package:getx/routes/app_routes.dart';
+
 
 class Screen3 extends StatelessWidget {
   const Screen3({super.key});
@@ -23,14 +24,13 @@ class Screen3 extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            Get.back();
-            Get.back();
+            Get.offAllNamed(AppRoutes.home);
           },
-          child: const Text('Goto 1stPage'),
+          child: const Text('Goto Home'),
         ),
         const SizedBox(height: 10,),
         ElevatedButton(onPressed: (){
-          Get.to(Screen4(),transition: Transition.rightToLeft,duration: const Duration(seconds: 1));
+          Get.toNamed(AppRoutes.screen4);
         }, child: const Text('Go Next'))
       ]),
     );

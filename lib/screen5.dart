@@ -1,11 +1,12 @@
-import 'dart:ffi';
+import 'dart:io';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:getx/countercontroller.dart';
 
+
 class Screen5 extends StatelessWidget {
   Screen5({super.key});
- 
+
   final CounterController controller = Get.put(CounterController());
   @override
   Widget build(BuildContext context) {
@@ -30,33 +31,46 @@ class Screen5 extends StatelessWidget {
               height: 15,
             ),
             SizedBox(
-              height: 500,
+              height: 400,
               child: ListView.builder(
                   itemCount: controller.fruits.length,
                   itemBuilder: (context, index) {
-                    return Card(
-                      child: ListTile(
+                    return Obx(
+                      () => Card(
+                        child: ListTile(
+                          onLongPress: () {
+                            Colors.transparent;
+                          },
                           title: Text(controller.fruits[index]),
-                          trailing: Obx(
-                            () => Icon(
-                              Icons.favorite_border_outlined,
-                              color: controller.fruits2.contains(controller.fruits[index])
-                                  ? Colors.red
-                                  : Colors.white,
-                            ),
+                          trailing: Icon(
+                            Icons.favorite_border_outlined,
+                            color: controller.fruits2.contains(index)
+                                ? Colors.red
+                                : Colors.white,
                           ),
                           onTap: () {
-                            if (controller.fruits2.contains(controller.fruits[index])) {
-                              controller.removetofav(controller.fruits[index]);
-                            } else {
-                              controller.addtofav(controller.fruits[index]);
-                            }
-                            
+                            controller.onfavorite(index);
                           },
                         ),
-                      );
-                    
+                      ),
+                    );
                   }),
+            ),
+            Obx(
+              () =>  Column(
+                children: [
+                  CircleAvatar(
+                radius: 35,
+                backgroundImage: controller.imagepath.isNotEmpty
+                    ? FileImage(File(controller.imagepath.toString()))
+                    : null
+              ),
+              TextButton(onPressed: () {
+                controller.imagepicker();
+              },
+               child: const Text('Pick Image'),),
+                ],
+              ),
             )
           ],
         ),

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:getx/screen2.dart';
 import 'package:flutter/material.dart';
+import 'package:getx/routes/app_routes.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -96,13 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(
-                  const Screen2(),
-                  transition: Transition.rightToLeft,
-                  duration: const Duration(seconds: 1),
-                  arguments: 'This is a Second Page',
-                  curve: Curves.easeInOut,
-                );
+                Get.toNamed(AppRoutes.screen2);
               },
               child: const Text('Go Next'),
             ),

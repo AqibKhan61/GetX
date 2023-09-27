@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
-import 'package:getx/screen3.dart';
 import 'package:flutter/material.dart';
+import 'package:getx/routes/app_routes.dart';
+
+
 
 class Screen2 extends StatelessWidget {
   const Screen2({super.key});
@@ -13,15 +15,15 @@ class Screen2 extends StatelessWidget {
       ),
       body:
            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-         Center(
+         const Center(
           child: Text(
-           '${Get.arguments}',
-            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+           'This is Second Page',
+            style:  TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
         const SizedBox(height: 10,),
         ElevatedButton(onPressed: (){
-          Get.to(const Screen3(),transition: Transition.rightToLeft,duration: const Duration(seconds: 1));
+          Get.toNamed(AppRoutes.screen3);
         }, child: const Text('Go Next'))
       ]),
     );

@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 import 'countercontroller.dart';
-import 'package:getx/screen5.dart';
 import 'package:flutter/material.dart';
+import 'package:getx/routes/app_routes.dart';
+
 
 
 
@@ -92,7 +93,7 @@ class Screen4 extends  StatelessWidget {
             ),
             const SizedBox(height:10),
             ElevatedButton(onPressed: (){
-              Get.to(Screen5(),transition:Transition.rightToLeft,duration: const Duration(seconds:1),);
+              Get.toNamed(AppRoutes.screen5);
             }, child: const Text('Go Next'))
           ],
         ),
