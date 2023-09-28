@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'countercontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:getx/routes/app_routes.dart';
+import '../Controllers/countercontroller.dart';
 
 
 

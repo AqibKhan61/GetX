@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:getx/home.dart';
-import 'package:getx/screen2.dart';
-import 'package:getx/screen3.dart';
-import 'package:getx/screen4.dart';
-import 'package:getx/screen5.dart';
+import 'package:getx/Screens/home.dart';
+import 'package:getx/Screens/screen5.dart';
+import 'package:getx/Screens/screen4.dart';
+import 'package:getx/Screens/screen3.dart';
+import 'package:getx/Screens/screen2.dart';
 import 'package:getx/routes/app_routes.dart';
 
 

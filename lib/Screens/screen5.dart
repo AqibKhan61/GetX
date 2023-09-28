@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:getx/countercontroller.dart';
+import 'package:getx/Controllers/countercontroller.dart';
 
 
 class Screen5 extends StatelessWidget {
